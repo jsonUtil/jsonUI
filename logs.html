@@ -30,7 +30,7 @@
     <script>
     document.getElementById("loadLogs").addEventListener("click", async () => {
         try {
-            const res = await fetch("http://localhost:4000/v1/logs", {
+            const res = await fetch("https://json-util-three.vercel.app/logs", {
                 headers: {
                     "Authorization": "Bearer my-secret-api-key"
                 }
