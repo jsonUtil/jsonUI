@@ -970,7 +970,7 @@
         // Enhanced Application State
         const state = {
             currentTheme: localStorage.getItem('theme') || 'light',
-            apiKey: 'your-api-key',
+            apiKey: 'my-secret-api-key',
             baseUrl: 'https://json-util-three.vercel.app',
             currentFile: null
         };
@@ -1301,7 +1301,20 @@
 
             showLoading('Generating form...');
 
+             const htmlResponse = await fetch(`${state.baseUrl}/forms`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${state.apiKey}`,
+                        'X-Operation': 'FORM',
+                        'X-Response-Type': 'html',
+                        'X-CSS-Framework': framework,
+                        'X-JSON-Payload': jsonData
+                    }
+                });
+                
             try {
+                console.log(`${state.baseUrl}/forms`)
+
                 const htmlResponse = await fetch(`${state.baseUrl}/forms`, {
                     method: 'POST',
                     headers: {
@@ -1346,7 +1359,7 @@
                 const schema = generateJSONSchema(data);
 
                 displayResults(html, schema);
-                showStatus('Form generated !!', 'success');
+                showStatus('Form generated !!', 'info');
             } catch (error) {
                 showStatus(`Error: ${error.message}`, 'error');
             }
