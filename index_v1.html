@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JSON Form Viewer - JSON Utils</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
     <style>
         /* Previous CSS styles remain the same - adding new upload styles */
@@ -447,7 +450,7 @@
             font-size: 0.875rem;
         }
 
-        .framework-radio:checked + .framework-label {
+        .framework-radio:checked+.framework-label {
             border-color: var(--primary-color);
             background: rgba(102, 126, 234, 0.1);
             color: var(--primary-color);
@@ -693,8 +696,13 @@
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         /* Responsive Design */
@@ -752,12 +760,24 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .hidden { display: none; }
-        .text-center { text-align: center; }
+        .hidden {
+            display: none;
+        }
+
+        .text-center {
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -772,8 +792,9 @@
                 <div class="header-actions">
                     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path class="sun-icon" d="M12 17.5a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM12 1.5a1 1 0 011 1v1a1 1 0 01-2 0v-1a1 1 0 011-1zm0 17a1 1 0 011 1v1a1 1 0 01-2 0v-1a1 1 0 011-1zM22.5 12a1 1 0 01-1 1h-1a1 1 0 01-0-2h1a1 1 0 011 1zm-17 0a1 1 0 01-1 1h-1a1 1 0 01-0-2h1a1 1 0 011 1z"/>
-                            <path class="moon-icon hidden" d="M21.5 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            <path class="sun-icon"
+                                d="M12 17.5a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM12 1.5a1 1 0 011 1v1a1 1 0 01-2 0v-1a1 1 0 011-1zm0 17a1 1 0 011 1v1a1 1 0 01-2 0v-1a1 1 0 011-1zM22.5 12a1 1 0 01-1 1h-1a1 1 0 01-0-2h1a1 1 0 011 1zm-17 0a1 1 0 01-1 1h-1a1 1 0 01-0-2h1a1 1 0 011 1z" />
+                            <path class="moon-icon hidden" d="M21.5 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </button>
                 </div>
@@ -793,38 +814,33 @@
                     <div class="upload-section">
                         <label class="section-label">Upload JSON File:</label>
                         <div class="upload-area" id="uploadArea">
-                            <input 
-                                type="file" 
-                                id="fileInput" 
-                                class="file-input" 
-                                accept=".json,.txt"
-                                aria-label="Upload JSON file"
-                            >
+                            <input type="file" id="fileInput" class="file-input" accept=".json,.txt"
+                                aria-label="Upload JSON file">
                             <svg class="upload-icon" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8s0 0 0 0l-6-6z"/>
-                                <polyline points="14,2 14,8 20,8"/>
-                                <line x1="16" y1="13" x2="8" y2="13"/>
-                                <line x1="16" y1="17" x2="8" y2="17"/>
-                                <polyline points="10,9 9,9 8,9"/>
+                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8s0 0 0 0l-6-6z" />
+                                <polyline points="14,2 14,8 20,8" />
+                                <line x1="16" y1="13" x2="8" y2="13" />
+                                <line x1="16" y1="17" x2="8" y2="17" />
+                                <polyline points="10,9 9,9 8,9" />
                             </svg>
                             <div class="upload-text">Drop your JSON file here</div>
                             <div class="upload-subtext">or click to browse (.json, .txt files)</div>
                             <button type="button" class="upload-btn">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4m14-7l-5-5-5 5m5-5v12"/>
+                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4m14-7l-5-5-5 5m5-5v12" />
                                 </svg>
                                 Choose File
                             </button>
                         </div>
                         <div class="file-info" id="fileInfo">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             <span class="file-name" id="fileName">filename.json</span>
                             <span class="file-size" id="fileSize">2.5 KB</span>
                             <button class="clear-file" id="clearFile" title="Clear file">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M18 6L6 18M6 6l12 12"/>
+                                    <path d="M18 6L6 18M6 6l12 12" />
                                 </svg>
                             </button>
                         </div>
@@ -844,10 +860,7 @@
                                 <button class="input-action-btn" id="formatJson" title="Format JSON">Format</button>
                             </div>
                         </div>
-                        <textarea 
-                            id="jsonInput" 
-                            class="json-input" 
-                            placeholder='{
+                        <textarea id="jsonInput" class="json-input" placeholder='{
   "name": "Alice",
   "age": 25,
   "email": "alice@example.com",
@@ -878,15 +891,18 @@
                         <label class="section-label">CSS Framework:</label>
                         <div class="framework-grid">
                             <div class="framework-option">
-                                <input type="radio" id="none" name="framework" value="none" class="framework-radio" checked>
+                                <input type="radio" id="none" name="framework" value="none" class="framework-radio"
+                                    checked>
                                 <label for="none" class="framework-label">None</label>
                             </div>
                             <div class="framework-option">
-                                <input type="radio" id="bootstrap" name="framework" value="bootstrap" class="framework-radio">
+                                <input type="radio" id="bootstrap" name="framework" value="bootstrap"
+                                    class="framework-radio">
                                 <label for="bootstrap" class="framework-label">Bootstrap</label>
                             </div>
                             <div class="framework-option">
-                                <input type="radio" id="materialize" name="framework" value="materialize" class="framework-radio">
+                                <input type="radio" id="materialize" name="framework" value="materialize"
+                                    class="framework-radio">
                                 <label for="materialize" class="framework-label">Materialize</label>
                             </div>
                         </div>
@@ -895,13 +911,13 @@
                     <div class="action-section">
                         <button id="generateForm" class="btn btn-primary">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M13 3a9 9 0 010 18c-.83 0-1.54-.5-1.84-1.22l.27-.06A7 7 0 1113 5.05V3z"/>
+                                <path d="M13 3a9 9 0 010 18c-.83 0-1.54-.5-1.84-1.22l.27-.06A7 7 0 1113 5.05V3z" />
                             </svg>
                             Generate Form
                         </button>
                         <button id="validateJson" class="btn btn-secondary">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             Validate
                         </button>
@@ -921,14 +937,16 @@
                     <div id="formTab" class="tab-pane active">
                         <div id="statusMessage" class="status-message status-info">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                <path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             Upload a JSON file or enter JSON to generate form
                         </div>
                         <div class="form-preview">
                             <div id="formOutput" class="generated-form text-center">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" style="color: var(--text-light); margin-bottom: 1rem;">
-                                    <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor"
+                                    style="color: var(--text-light); margin-bottom: 1rem;">
+                                    <path
+                                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                 </svg>
                                 <p style="color: var(--text-muted);">Form preview will appear here</p>
                             </div>
@@ -942,7 +960,8 @@
                                 <button class="copy-button" id="copyHtml">Copy Code</button>
                             </div>
                             <div class="code-content">
-                                <pre id="htmlCode"><code>// HTML code will appear here after generating form</code></pre>
+                                <pre
+                                    id="htmlCode"><code>// HTML code will appear here after generating form</code></pre>
                             </div>
                         </div>
                     </div>
@@ -954,7 +973,8 @@
                                 <button class="copy-button" id="copySchema">Copy Schema</button>
                             </div>
                             <div class="code-content">
-                                <pre id="schemaCode"><code>// JSON Schema will appear here after generating form</code></pre>
+                                <pre
+                                    id="schemaCode"><code>// JSON Schema will appear here after generating form</code></pre>
                             </div>
                         </div>
                     </div>
@@ -964,7 +984,8 @@
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
 
     <script>
         // Enhanced Application State
@@ -1147,7 +1168,7 @@
             }
 
             const reader = new FileReader();
-            reader.onload = function(e) {
+            reader.onload = function (e) {
                 try {
                     const content = e.target.result;
                     // Try to parse to validate JSON
@@ -1171,7 +1192,7 @@
                 }
             };
 
-            reader.onerror = function() {
+            reader.onerror = function () {
                 showStatus('Error reading file', 'error');
             };
 
@@ -1301,23 +1322,14 @@
 
             showLoading('Generating form...');
 
-             const htmlResponse = await fetch(`${state.baseUrl}/forms`, {
-                    method: 'POST',
-                    headers: {
-                        'Authorization': `Bearer ${state.apiKey}`,
-                        'X-Operation': 'FORM',
-                        'X-Response-Type': 'html',
-                        'X-CSS-Framework': framework,
-                        'X-JSON-Payload': jsonData
-                    }
-                });
-                
             try {
                 console.log(`${state.baseUrl}/forms`)
 
                 const htmlResponse = await fetch(`${state.baseUrl}/forms`, {
                     method: 'POST',
+                    mode: 'cors',
                     headers: {
+                        'Content-Type': 'application/json',
                         'Authorization': `Bearer ${state.apiKey}`,
                         'X-Operation': 'FORM',
                         'X-Response-Type': 'html',
@@ -1328,7 +1340,9 @@
 
                 const schemaResponse = await fetch(`${state.baseUrl}/forms`, {
                     method: 'POST',
+                    mode: 'cors',
                     headers: {
+                        'Content-Type': 'application/json',
                         'Authorization': `Bearer ${state.apiKey}`,
                         'X-Operation': 'FORM',
                         'X-Response-Type': 'json',
@@ -1513,4 +1527,5 @@
         document.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
+
 </html>
